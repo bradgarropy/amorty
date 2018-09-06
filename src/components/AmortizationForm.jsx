@@ -12,7 +12,8 @@ const AmortizationForm = ({amount, rate, term, date, onChange}) => {
             <label>Principal</label>
             <input
                 type="number"
-                name="principal"
+                name="amount"
+                min={0}
                 value={amount}
                 onChange={onChange}
             />
@@ -21,6 +22,7 @@ const AmortizationForm = ({amount, rate, term, date, onChange}) => {
             <input
                 type="number"
                 name="rate"
+                min={0}
                 value={rate}
                 onChange={onChange}
             />
@@ -29,6 +31,7 @@ const AmortizationForm = ({amount, rate, term, date, onChange}) => {
             <input
                 type="number"
                 name="term"
+                min={0}
                 value={term}
                 onChange={onChange}
             />

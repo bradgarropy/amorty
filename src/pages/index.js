@@ -54,8 +54,8 @@ class IndexPage extends React.Component {
 
                 <AmortizationForm
                     amount={amount}
-                    rate={term}
-                    term={rate}
+                    rate={rate}
+                    term={term}
                     date={date}
                     onChange={this.onChange}
                 />
