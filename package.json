@@ -5,12 +5,12 @@
     "author": "Brad Garropy <bradgarropy@gmail.com>",
     "dependencies": {
         "amortization": "^1.1.1",
+        "date-fns": "^1.29.0",
         "eslint": "^5.5.0",
         "eslint-plugin-react": "^7.11.1",
         "gatsby": "^1.9.277",
         "gatsby-link": "^1.6.46",
         "gatsby-plugin-react-helmet": "^2.0.11",
-        "moment": "^2.22.2",
         "react-helmet": "^5.2.0"
     },
     "keywords": [
