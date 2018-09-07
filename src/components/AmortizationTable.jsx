@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import format from "date-fns/format"
 
 
-const AmortizationTable = ({schedule}) => {
+const AmortizationTable = ({periods}) => {
 
     return (
 
@@ -22,29 +22,29 @@ const AmortizationTable = ({schedule}) => {
             </thead>
 
             <tbody>
-                {schedule.map(
-                    item => {
+                {periods.map(
+                    period => {
 
                         const {
-                            paymentNumber: period,
-                            date: date,
-                            principalBalance: balance,
-                            payment: payment,
-                            principalPayment: principal,
-                            interestPayment: interest,
-                            totalPrincipal: totalPrincipal,
-                            accInterest: totalInterest,
-                        } = item
+                            number,
+                            date,
+                            balance,
+                            payment,
+                            principal,
+                            interest,
+                            totalPrincipal,
+                            totalInterest,
+                        } = period
 
                         return (
-                            <tr key={period}>
+                            <tr key={number}>
                                 <td>{format(date, "MM/DD/YYYY")}</td>
-                                <td>{balance.toFixed(2)}</td>
-                                <td>{payment.toFixed(2)}</td>
-                                <td>{principal.toFixed(2)}</td>
-                                <td>{interest.toFixed(2)}</td>
-                                <td>{totalPrincipal.toFixed(2)}</td>
-                                <td>{totalInterest.toFixed(2)}</td>
+                                <td>{balance}</td>
+                                <td>{payment}</td>
+                                <td>{principal}</td>
+                                <td>{interest}</td>
+                                <td>{totalPrincipal}</td>
+                                <td>{totalInterest}</td>
                             </tr>
                         )
 
@@ -60,7 +60,7 @@ const AmortizationTable = ({schedule}) => {
 
 
 AmortizationTable.propTypes = {
-    schedule: PropTypes.arrayOf(PropTypes.object).isRequired,
+    periods: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 

@@ -15,10 +15,11 @@ class IndexPage extends React.Component {
         super(props)
 
         this.state = {
-            amount: 39138.15,
-            rate: 2.9,
-            term: 5,
-            date: parse("9/26/2018"),
+            amount: 0,
+            rate: 0,
+            term:0,
+            date: parse(new Date()),
+            show: false,
         }
 
         this.onChange = this.onChange.bind(this)
@@ -38,13 +39,42 @@ class IndexPage extends React.Component {
 
     render() {
 
-        const {amount, term, rate, date} = this.state
+        const {amount, term, rate, date, show} = this.state
 
-        let schedule = amortizationSchedule(amount, term, rate)
-        schedule.forEach(element => {
-            element.date = addMonths(date, element.paymentNumber - 1)
-            element.totalPrincipal = amount - element.principalBalance
-        })
+        let schedule = null
+        let periods = null
+
+        if(show) {
+
+            schedule = amortizationSchedule(amount, term, rate)
+
+            periods = schedule.map(
+                period => {
+
+                    const {
+                        paymentNumber,
+                        principalBalance,
+                        payment,
+                        principalPayment,
+                        interestPayment,
+                        accInterest,
+                    } = period
+
+                    return({
+                        number: paymentNumber,
+                        date: addMonths(date, paymentNumber - 1),
+                        balance: principalBalance.toFixed(2),
+                        payment: payment.toFixed(2),
+                        principal: principalPayment.toFixed(2),
+                        interest: interestPayment.toFixed(2),
+                        totalPrincipal: (amount - principalBalance).toFixed(2),
+                        totalInterest: accInterest.toFixed(2),
+                    })
+
+                }
+            )
+
+        }
 
         return (
 
@@ -60,7 +90,7 @@ class IndexPage extends React.Component {
                     onChange={this.onChange}
                 />
 
-                <AmortizationTable schedule={schedule}/>
+                {show && <AmortizationTable periods={periods}/>}
 
             </div>
 
