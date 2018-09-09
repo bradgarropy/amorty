@@ -35,6 +35,12 @@ class IndexPage extends React.Component {
             :
             this.setState({[name]: value})
 
+        this.validate()
+
+    }
+
+    validate() {
+        console.table(this.state)
     }
 
     render() {
