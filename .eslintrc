@@ -57,6 +57,10 @@
                 "ignoreRestSiblings": true
             }
         ],
+        "object-curly-spacing": [
+            "error",
+            "never"
+        ],
         "semi": [
             "error",
             "never"
@@ -71,6 +75,10 @@
         "semi-style": [
             "error",
             "last"
+        ],
+        "space-before-function-paren": [
+            "error",
+            "never"
         ],
         "quotes": [
             "error",
