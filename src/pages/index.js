@@ -28,19 +28,30 @@ class IndexPage extends React.Component {
 
     onChange(event) {
 
-        const {name, value, type} = event.target
+        const {name, type} = event.target
+        let {value} = event.target
 
-        type === "number" ?
-            this.setState({[name]: parseFloat(value)})
-            :
-            this.setState({[name]: value})
+        switch(type) {
+            case "text":
+                break
+            case "number":
+                value = parseFloat(value)
+                break
+            case "date":
+                value = parse(value)
+                break
+        }
 
-        this.validate()
+        this.setState({[name]: value}, this.validate)
 
     }
 
     validate() {
-        console.table(this.state)
+        const {amount, rate, term} = this.state
+
+        if(amount > 0 && rate > 0 && term > 0) {
+            this.setState({show: true})
+        }
     }
 
     render() {
