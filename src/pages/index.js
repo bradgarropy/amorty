@@ -23,6 +23,7 @@ class IndexPage extends React.Component {
         }
 
         this.onChange = this.onChange.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
 
     }
 
@@ -42,8 +43,13 @@ class IndexPage extends React.Component {
                 break
         }
 
-        this.setState({[name]: value}, this.validate)
+        this.setState({[name]: value})
 
+    }
+
+    onSubmit(event) {
+        event.preventDefault()
+        this.validate()
     }
 
     validate() {
@@ -95,7 +101,7 @@ class IndexPage extends React.Component {
 
         return (
 
-            <div>
+            <main>
 
                 <h1>Loan Amortization Calculator</h1>
 
@@ -105,11 +111,12 @@ class IndexPage extends React.Component {
                     term={term}
                     date={date}
                     onChange={this.onChange}
+                    onSubmit={this.onSubmit}
                 />
 
                 {show && <AmortizationTable periods={periods}/>}
 
-            </div>
+            </main>
 
         )
 

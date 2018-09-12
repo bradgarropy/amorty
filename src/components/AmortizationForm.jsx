@@ -6,12 +6,14 @@ import format from "date-fns/format"
 import "../scss/AmortizationForm.scss"
 
 
-const AmortizationForm = ({amount, rate, term, date, onChange}) => {
+const AmortizationForm = ({amount, rate, term, date, onChange, onSubmit}) => {
 
     return (
 
-        <form className="amortization-form">
-
+        <form
+            className="amortization-form"
+            onSubmit={onSubmit}
+        >
 
             <label>Principal</label>
             <input
@@ -48,6 +50,10 @@ const AmortizationForm = ({amount, rate, term, date, onChange}) => {
                 onChange={onChange}
             />
 
+            <button type="submit">
+                Calculate
+            </button>
+
         </form>
 
     )
@@ -61,6 +67,7 @@ AmortizationForm.propTypes = {
     term: PropTypes.number.isRequired,
     date: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
 }
 
 

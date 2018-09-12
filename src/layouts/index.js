@@ -5,13 +5,15 @@ import PropTypes from "prop-types"
 // components
 
 // styles
+import "../scss/main.scss"
+import "../scss/IndexLayout.scss"
 
 
 const IndexLayout = ({children}) => {
 
     return (
 
-        <div>
+        <div className="index-layout">
 
             <Helmet>
                 <title>amorty</title>
@@ -19,7 +21,11 @@ const IndexLayout = ({children}) => {
                 <meta name="keywords" content="sample, something"/>
             </Helmet>
 
+            <img src="/images/ceo-morty.png"/>
+
             {children()}
+
+            <img src="/images/intern-morty.png"/>
 
         </div>
 

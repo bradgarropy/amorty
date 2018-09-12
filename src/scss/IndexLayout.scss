@@ -1,0 +1,17 @@
+.index-layout {
+
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    justify-items: center;
+    align-items: start;
+
+    img {
+        align-self: end;
+
+        &:first-of-type {
+            transform: scaleX(-1);
+        }
+    }
+
+}
