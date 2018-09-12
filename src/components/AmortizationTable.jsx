@@ -2,12 +2,15 @@ import React from "react"
 import PropTypes from "prop-types"
 import format from "date-fns/format"
 
+// styles
+import "../scss/AmortizationTable.scss"
+
 
 const AmortizationTable = ({periods}) => {
 
     return (
 
-        <table>
+        <table className="amortization-table">
 
             <thead>
                 <tr>

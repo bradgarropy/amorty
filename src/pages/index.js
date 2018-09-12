@@ -7,6 +7,9 @@ import {amortizationSchedule} from "amortization"
 import AmortizationTable from "../components/AmortizationTable"
 import AmortizationForm from "../components/AmortizationForm"
 
+// styles
+import "../scss/IndexPage.scss"
+
 
 class IndexPage extends React.Component {
 
@@ -101,7 +104,7 @@ class IndexPage extends React.Component {
 
         return (
 
-            <main>
+            <main className="index-page">
 
                 <h1>Loan Amortization Calculator</h1>
 

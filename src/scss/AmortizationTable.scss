@@ -1,0 +1,18 @@
+.amortization-table {
+
+    margin: 2rem;
+    border-collapse: collapse;
+
+    th {
+        padding: 0.75rem;
+        background-color: #1c3042;
+        color: #ffffff;
+        font-weight: normal;
+        border-bottom: 1px solid #dddddd;
+    }
+    td {
+        padding: 0.25rem 0;
+        border-bottom: 1px solid #dddddd;
+    }
+
+}

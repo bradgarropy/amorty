@@ -13,11 +13,21 @@
 
     input {
         font-family: "Ubuntu Mono", monospace;
+        font-size: 1rem;
+        padding: 0.25rem 0.5rem;
+        height: 1.5rem;
     }
 
     button {
         font-family: "Ubuntu Mono", monospace;
         grid-column: 1 / -1;
+        padding: 1rem;
+        margin: 1rem 0rem;
+        background-color: #1c3042;
+        color: #ffffff;
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
     }
 
 }
