@@ -15,9 +15,9 @@ class IndexPage extends React.Component {
         super(props)
 
         this.state = {
-            amount: 0,
-            rate: 0,
-            term:0,
+            amount: 30000.0,
+            rate: 3.0,
+            term: 5,
             date: parse(new Date()),
             show: false,
         }
