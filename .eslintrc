@@ -41,6 +41,10 @@
             "error",
             "always"
         ],
+        "function-paren-newline": [
+            "error",
+            "consistent"
+        ],
         "indent": [
             "error",
             4,
@@ -60,6 +64,18 @@
         "object-curly-spacing": [
             "error",
             "never"
+        ],
+        "object-curly-newline": [
+            "error",
+            {
+                "consistent": true
+            }
+        ],
+        "object-property-newline": [
+            "error",
+            {
+                "allowAllPropertiesOnSameLine": true
+            }
         ],
         "semi": [
             "error",
