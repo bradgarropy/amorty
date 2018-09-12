@@ -2,7 +2,8 @@ import React from "react"
 import Helmet from "react-helmet"
 import PropTypes from "prop-types"
 
-// components
+// favicon
+import favicon from "../icons/morty-head.png"
 
 // styles
 import "../scss/main.scss"
@@ -17,6 +18,7 @@ const IndexLayout = ({children}) => {
 
             <Helmet>
                 <title>amorty</title>
+                <link rel="icon" type="image/png" href={favicon}/>
                 <meta name="description" content="Sample"/>
                 <meta name="keywords" content="sample, something"/>
             </Helmet>
