@@ -11,7 +11,12 @@
         justify-self: end;
     }
 
+    input {
+        font-family: "Ubuntu Mono", monospace;
+    }
+
     button {
+        font-family: "Ubuntu Mono", monospace;
         grid-column: 1 / -1;
     }
 
