@@ -3,16 +3,23 @@
     margin: 2rem;
     border-collapse: collapse;
 
+    tr {
+        border-bottom: 1px solid #dddddd;
+
+        &:hover {
+            background-color: #ddeeff;
+        }
+    }
+
     th {
         padding: 0.75rem;
         background-color: #1c3042;
         color: #ffffff;
         font-weight: normal;
-        border-bottom: 1px solid #dddddd;
     }
+
     td {
         padding: 0.25rem 0;
-        border-bottom: 1px solid #dddddd;
     }
 
 }
