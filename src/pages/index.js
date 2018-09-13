@@ -22,6 +22,7 @@ class IndexPage extends React.Component {
             rate: 3.0,
             term: 5,
             date: parse(new Date()),
+            periods: {},
             show: false,
             errors: {},
         }
@@ -55,10 +56,21 @@ class IndexPage extends React.Component {
 
         event.preventDefault()
 
-        const {errors} = this.state
+        const {amount, term, rate, date, errors} = this.state
 
         if(isEmpty(errors)) {
-            this.setState({show: true})
+
+            const periods = amortizationPeriods(
+                amount,
+                term,
+                rate,
+                date
+            )
+
+            this.setState({
+                periods,
+                show: true,
+            })
         }
 
     }
@@ -85,19 +97,7 @@ class IndexPage extends React.Component {
 
     render() {
 
-        const {amount, term, rate, date, show, errors} = this.state
-        let periods = null
-
-        if(show) {
-
-            periods = amortizationPeriods(
-                amount,
-                term,
-                rate,
-                date
-            )
-
-        }
+        const {amount, term, rate, date, periods, show, errors} = this.state
 
         return (
 
