@@ -6,7 +6,7 @@ import format from "date-fns/format"
 import "../scss/AmortizationForm.scss"
 
 
-const AmortizationForm = ({amount, rate, term, date, onChange, onSubmit}) => {
+const AmortizationForm = ({amount, rate, term, date, errors, onChange, onSubmit}) => {
 
     return (
 
@@ -15,40 +15,65 @@ const AmortizationForm = ({amount, rate, term, date, onChange, onSubmit}) => {
             onSubmit={onSubmit}
         >
 
-            <label>Principal</label>
-            <input
-                type="number"
-                name="amount"
-                min={0}
-                value={amount}
-                onChange={onChange}
-            />
+            <div className="amortization-form-element">
 
-            <label>Rate</label>
-            <input
-                type="number"
-                name="rate"
-                min={0}
-                value={rate}
-                onChange={onChange}
-            />
+                <label>Principal</label>
 
-            <label>Term</label>
-            <input
-                type="number"
-                name="term"
-                min={0}
-                value={term}
-                onChange={onChange}
-            />
+                <input
+                    name="amount"
+                    type="number"
+                    value={amount}
+                    onChange={onChange}
+                />
 
-            <label>Date</label>
-            <input
-                name="date"
-                type="date"
-                value={format(date, "YYYY-MM-DD")}
-                onChange={onChange}
-            />
+                {errors.amount && <p>{errors.amount}</p>}
+
+            </div>
+
+            <div className="amortization-form-element">
+
+                <label>Rate</label>
+
+                <input
+                    name="rate"
+                    type="number"
+                    value={rate}
+                    onChange={onChange}
+                />
+
+                {errors.rate && <p>{errors.rate}</p>}
+
+            </div>
+
+            <div className="amortization-form-element">
+
+                <label>Term</label>
+
+                <input
+                    name="term"
+                    type="number"
+                    value={term}
+                    onChange={onChange}
+                />
+
+                {errors.term && <p>{errors.term}</p>}
+
+            </div>
+
+            <div className="amortization-form-element">
+
+                <label>Date</label>
+
+                <input
+                    name="date"
+                    type="date"
+                    value={format(date, "YYYY-MM-DD")}
+                    onChange={onChange}
+                />
+
+                {errors.date && <p>{errors.date}</p>}
+
+            </div>
 
             <button type="submit">
                 Calculate
@@ -66,6 +91,7 @@ AmortizationForm.propTypes = {
     rate: PropTypes.number.isRequired,
     term: PropTypes.number.isRequired,
     date: PropTypes.object.isRequired,
+    errors: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
 }

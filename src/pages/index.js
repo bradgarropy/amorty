@@ -1,6 +1,7 @@
 import React from "react"
 import parse from "date-fns/parse"
 import addMonths from "date-fns/add_months"
+import isEmpty from "lodash.isempty"
 import {amortizationSchedule} from "amortization"
 
 // components
@@ -57,7 +58,7 @@ class IndexPage extends React.Component {
 
         const {errors} = this.state
 
-        if(!errors) {
+        if(isEmpty(errors)) {
             this.setState({show: true})
         }
 
@@ -71,7 +72,7 @@ class IndexPage extends React.Component {
             let errors = {...this.state.errors}
 
             if(value <= 0 || isNaN(value)) {
-                errors[name] = `${name} error`
+                errors[name] = "Enter a positive number."
             }
             else {
                 delete errors[name]
@@ -85,7 +86,7 @@ class IndexPage extends React.Component {
 
     render() {
 
-        const {amount, term, rate, date, show} = this.state
+        const {amount, term, rate, date, show, errors} = this.state
 
         let schedule = null
         let periods = null
@@ -133,6 +134,7 @@ class IndexPage extends React.Component {
                     rate={rate}
                     term={term}
                     date={date}
+                    errors={errors}
                     onChange={this.onChange}
                     onSubmit={this.onSubmit}
                 />
