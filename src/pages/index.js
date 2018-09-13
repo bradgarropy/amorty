@@ -23,6 +23,7 @@ class IndexPage extends React.Component {
             term: 5,
             date: parse(new Date()),
             show: false,
+            errors: {},
         }
 
         this.onChange = this.onChange.bind(this)
@@ -46,21 +47,40 @@ class IndexPage extends React.Component {
                 break
         }
 
-        this.setState({[name]: value})
+        this.setState({[name]: value}, this.validate(name))
 
     }
 
     onSubmit(event) {
+
         event.preventDefault()
-        this.validate()
-    }
 
-    validate() {
-        const {amount, rate, term} = this.state
+        const {errors} = this.state
 
-        if(amount > 0 && rate > 0 && term > 0) {
+        if(!errors) {
             this.setState({show: true})
         }
+
+    }
+
+    validate(name) {
+
+        return function() {
+
+            const value = this.state[name]
+            let errors = {...this.state.errors}
+
+            if(value <= 0 || isNaN(value)) {
+                errors[name] = `${name} error`
+            }
+            else {
+                delete errors[name]
+            }
+
+            this.setState({errors})
+
+        }
+
     }
 
     render() {
