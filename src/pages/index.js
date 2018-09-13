@@ -1,8 +1,7 @@
 import React from "react"
 import parse from "date-fns/parse"
-import addMonths from "date-fns/add_months"
 import isEmpty from "lodash.isempty"
-import {amortizationSchedule} from "amortization"
+import amortizationPeriods from "../utils/amortization"
 
 // components
 import AmortizationTable from "../components/AmortizationTable"
@@ -87,38 +86,15 @@ class IndexPage extends React.Component {
     render() {
 
         const {amount, term, rate, date, show, errors} = this.state
-
-        let schedule = null
         let periods = null
 
         if(show) {
 
-            schedule = amortizationSchedule(amount, term, rate)
-
-            periods = schedule.map(
-                period => {
-
-                    const {
-                        paymentNumber,
-                        principalBalance,
-                        payment,
-                        principalPayment,
-                        interestPayment,
-                        accInterest,
-                    } = period
-
-                    return({
-                        number: paymentNumber,
-                        date: addMonths(date, paymentNumber - 1),
-                        balance: principalBalance.toFixed(2),
-                        payment: payment.toFixed(2),
-                        principal: principalPayment.toFixed(2),
-                        interest: interestPayment.toFixed(2),
-                        totalPrincipal: (amount - principalBalance).toFixed(2),
-                        totalInterest: accInterest.toFixed(2),
-                    })
-
-                }
+            periods = amortizationPeriods(
+                amount,
+                term,
+                rate,
+                date
             )
 
         }
