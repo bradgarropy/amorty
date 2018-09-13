@@ -9,6 +9,8 @@
 
     img {
         align-self: end;
+        position: sticky;
+        bottom: 0;
 
         &:first-of-type {
             transform: scaleX(-1);
