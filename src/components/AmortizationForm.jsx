@@ -1,7 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import format from "date-fns/format"
 import classNames from "classnames"
+import format from "date-fns/format"
+import isEmpty from "lodash.isempty"
 
 // styles
 import "../scss/AmortizationForm.scss"
@@ -88,7 +89,7 @@ const AmortizationForm = ({amount, rate, term, date, errors, onChange, onSubmit}
 
             </div>
 
-            <button type="submit">
+            <button type="submit" disabled={!isEmpty(errors)}>
                 Calculate
             </button>
 
