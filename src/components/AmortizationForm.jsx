@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import format from "date-fns/format"
+import classNames from "classnames"
 
 // styles
 import "../scss/AmortizationForm.scss"
@@ -15,7 +16,10 @@ const AmortizationForm = ({amount, rate, term, date, errors, onChange, onSubmit}
             onSubmit={onSubmit}
         >
 
-            <div className="amortization-form-element">
+            <div className={classNames(
+                "amortization-form-element",
+                {"amortization-form-element-error": errors.amount}
+            )}>
 
                 <label>Principal</label>
 
@@ -30,7 +34,10 @@ const AmortizationForm = ({amount, rate, term, date, errors, onChange, onSubmit}
 
             </div>
 
-            <div className="amortization-form-element">
+            <div className={classNames(
+                "amortization-form-element",
+                {"amortization-form-element-error": errors.rate}
+            )}>
 
                 <label>Rate</label>
 
@@ -45,7 +52,10 @@ const AmortizationForm = ({amount, rate, term, date, errors, onChange, onSubmit}
 
             </div>
 
-            <div className="amortization-form-element">
+            <div className={classNames(
+                "amortization-form-element",
+                {"amortization-form-element-error": errors.term}
+            )}>
 
                 <label>Term</label>
 
@@ -60,7 +70,10 @@ const AmortizationForm = ({amount, rate, term, date, errors, onChange, onSubmit}
 
             </div>
 
-            <div className="amortization-form-element">
+            <div className={classNames(
+                "amortization-form-element",
+                {"amortization-form-element-error": errors.date}
+            )}>
 
                 <label>Date</label>
 

@@ -22,14 +22,25 @@
             font-size: 1rem;
             padding: 0.25rem 0.5rem;
             height: 1.5rem;
+
+            &:focus {
+                outline: none;
+            }
         }
 
         p {
             grid-column: 2 / -1;
             margin: 0;
             justify-self: start;
+            color: #ee5555;
         }
 
+    }
+
+    .amortization-form-element-error {
+        input {
+            border: 1px solid #ee5555;
+        }
     }
 
     button {

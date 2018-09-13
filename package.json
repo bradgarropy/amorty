@@ -5,6 +5,7 @@
     "author": "Brad Garropy <bradgarropy@gmail.com>",
     "dependencies": {
         "amortization": "^1.1.1",
+        "classnames": "^2.2.6",
         "date-fns": "^1.29.0",
         "eslint": "^5.5.0",
         "eslint-plugin-react": "^7.11.1",
