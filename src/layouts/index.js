@@ -2,6 +2,9 @@ import React from "react"
 import Helmet from "react-helmet"
 import PropTypes from "prop-types"
 
+// components
+import BuiltBy from "../components/BuiltBy"
+
 // favicon
 import favicon from "../icons/morty-head.png"
 
@@ -27,6 +30,7 @@ const IndexLayout = ({children}) => {
 
             {children()}
 
+            <BuiltBy/>
             <img src="/images/intern-morty.png"/>
 
         </div>
