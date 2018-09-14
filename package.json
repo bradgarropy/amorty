@@ -1,7 +1,7 @@
 {
     "name": "amorty",
-    "version": "1.0.1",
-    "description": "loan ammortization calculator",
+    "version": "1.0.2",
+    "description": "💳 morty powered loan ammortization calculator",
     "keywords": [
         "gatsby",
         "react",
