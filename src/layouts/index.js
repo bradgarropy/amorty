@@ -22,8 +22,8 @@ const IndexLayout = ({children}) => {
             <Helmet>
                 <title>amorty</title>
                 <link rel="icon" type="image/png" href={favicon}/>
-                <meta name="description" content="Sample"/>
-                <meta name="keywords" content="sample, something"/>
+                <meta name="description" content="Let Morty amortize your loan!"/>
+                <meta name="keywords" content="loan, amortization, calculator"/>
             </Helmet>
 
             <img src="/images/ceo-morty.png"/>
