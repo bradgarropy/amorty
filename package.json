@@ -1,8 +1,34 @@
 {
     "name": "amorty",
-    "description": "loan ammortization calculator",
     "version": "1.0.0",
-    "author": "Brad Garropy <bradgarropy@gmail.com>",
+    "description": "loan ammortization calculator",
+    "keywords": [
+        "gatsby",
+        "react",
+        "scss",
+        "eslint",
+        "loan",
+        "amortization",
+        "calculator"
+    ],
+    "homepage": "https://amorty.netlify.com",
+    "bugs": {
+        "url": "https://github.com/bradgarropy/amorty/issues"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Brad Garropy",
+        "email": "bradgarropy@gmail.com",
+        "url": "https://bradgarropy.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bradgarropy/amorty"
+    },
+    "scripts": {
+        "build": "gatsby build",
+        "develop": "gatsby develop"
+    },
     "dependencies": {
         "amortization": "^1.1.1",
         "classnames": "^2.2.6",
@@ -17,17 +43,5 @@
         "lodash.isempty": "^4.4.0",
         "react-helmet": "^5.2.0"
     },
-    "keywords": [
-        "gatsby"
-    ],
-    "license": "MIT",
-    "scripts": {
-        "build": "gatsby build",
-        "develop": "gatsby develop"
-    },
-    "devDependencies": {},
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/bradgarropy/amorty"
-    }
+    "devDependencies": {}
 }
