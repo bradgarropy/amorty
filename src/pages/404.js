@@ -1,14 +1,22 @@
 import React from "react"
 
+// components
+import Layout from "../components/Layout"
+
 
 const FourOhFour = () => {
 
     return (
 
-        <div>
-            <h1>NOT FOUND</h1>
-            <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-        </div>
+        <Layout>
+
+            <div>
+                <h1>NOT FOUND</h1>
+                <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+            </div>
+
+        </Layout>
+
 
     )
 

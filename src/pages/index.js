@@ -4,6 +4,7 @@ import isEmpty from "lodash.isempty"
 import amortizationPeriods from "../utils/amortization"
 
 // components
+import Layout from "../components/Layout"
 import AmortizationTable from "../components/AmortizationTable"
 import AmortizationForm from "../components/AmortizationForm"
 
@@ -101,23 +102,27 @@ class IndexPage extends React.Component {
 
         return (
 
-            <main className="index-page">
+            <Layout>
 
-                <h1>Loan Amortization Calculator</h1>
+                <main className="index-page">
 
-                <AmortizationForm
-                    amount={amount}
-                    rate={rate}
-                    term={term}
-                    date={date}
-                    errors={errors}
-                    onChange={this.onChange}
-                    onSubmit={this.onSubmit}
-                />
+                    <h1>Loan Amortization Calculator</h1>
 
-                {show && <AmortizationTable periods={periods}/>}
+                    <AmortizationForm
+                        amount={amount}
+                        rate={rate}
+                        term={term}
+                        date={date}
+                        errors={errors}
+                        onChange={this.onChange}
+                        onSubmit={this.onSubmit}
+                    />
 
-            </main>
+                    {show && <AmortizationTable periods={periods}/>}
+
+                </main>
+
+            </Layout>
 
         )
 

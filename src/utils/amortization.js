@@ -38,4 +38,4 @@ function amortizationPeriods(amount, term, rate, date) {
 
 
 // exports
-module.exports = amortizationPeriods
+export default amortizationPeriods

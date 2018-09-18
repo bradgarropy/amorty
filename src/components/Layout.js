@@ -3,21 +3,21 @@ import Helmet from "react-helmet"
 import PropTypes from "prop-types"
 
 // components
-import BuiltBy from "../components/BuiltBy"
+import BuiltBy from "./BuiltBy"
 
 // favicon
 import favicon from "../icons/morty-head.png"
 
 // styles
 import "../scss/main.scss"
-import "../scss/IndexLayout.scss"
+import "../scss/Layout.scss"
 
 
-const IndexLayout = ({children}) => {
+const Layout = ({children}) => {
 
     return (
 
-        <div className="index-layout">
+        <div className="layout">
 
             <Helmet>
                 <title>amorty</title>
@@ -28,7 +28,7 @@ const IndexLayout = ({children}) => {
 
             <img src="/images/ceo-morty.png"/>
 
-            {children()}
+            {children}
 
             <BuiltBy/>
             <img src="/images/intern-morty.png"/>
@@ -39,9 +39,9 @@ const IndexLayout = ({children}) => {
 
 }
 
-IndexLayout.propTypes = {
+Layout.propTypes = {
     children: PropTypes.func,
 }
 
 // export
-export default IndexLayout
+export default Layout
