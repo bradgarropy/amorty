@@ -1,54 +1,54 @@
 {
-    "name": "amorty",
-    "version": "1.1.1",
-    "description": "💳 morty powered loan ammortization calculator",
-    "keywords": [
-        "gatsby",
-        "react",
-        "scss",
-        "eslint",
-        "loan",
-        "amortization",
-        "calculator"
-    ],
-    "homepage": "https://amorty.netlify.com",
-    "bugs": {
-        "url": "https://github.com/bradgarropy/amorty/issues"
-    },
-    "license": "MIT",
-    "author": {
-        "name": "Brad Garropy",
-        "email": "bradgarropy@gmail.com",
-        "url": "https://bradgarropy.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/bradgarropy/amorty"
-    },
-    "scripts": {
-        "build": "gatsby build",
-        "develop": "gatsby develop"
-    },
-    "dependencies": {
-        "amortization": "^1.1.1",
-        "classnames": "^2.2.6",
-        "date-fns": "^1.29.0",
-        "dotenv": "^6.0.0",
-        "gatsby": "^2.0.0",
-        "gatsby-plugin-google-analytics": "^2.0.5",
-        "gatsby-plugin-google-fonts": "0.0.4",
-        "gatsby-plugin-manifest": "^2.0.4",
-        "gatsby-plugin-offline": "^2.0.5",
-        "gatsby-plugin-react-helmet": "^3.0.0",
-        "gatsby-plugin-sass": "^2.0.1",
-        "lodash.isempty": "^4.4.0",
-        "node-sass": "^4.9.3",
-        "react": "^16.5.1",
-        "react-dom": "^16.5.1",
-        "react-helmet": "^5.2.0"
-    },
-    "devDependencies": {
-        "eslint": "^5.6.0",
-        "eslint-plugin-react": "^7.11.1"
-    }
+  "name": "amorty",
+  "version": "1.2.0",
+  "description": "💳 morty powered loan ammortization calculator",
+  "keywords": [
+    "gatsby",
+    "react",
+    "scss",
+    "eslint",
+    "loan",
+    "amortization",
+    "calculator"
+  ],
+  "homepage": "https://amorty.netlify.com",
+  "bugs": {
+    "url": "https://github.com/bradgarropy/amorty/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Brad Garropy",
+    "email": "bradgarropy@gmail.com",
+    "url": "https://bradgarropy.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bradgarropy/amorty"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop"
+  },
+  "dependencies": {
+    "amortization": "^1.1.1",
+    "classnames": "^2.2.6",
+    "date-fns": "^1.29.0",
+    "dotenv": "^6.0.0",
+    "gatsby": "^2.0.0",
+    "gatsby-plugin-google-analytics": "^2.0.5",
+    "gatsby-plugin-google-fonts": "0.0.4",
+    "gatsby-plugin-manifest": "^2.0.4",
+    "gatsby-plugin-offline": "^2.0.5",
+    "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-plugin-sass": "^2.0.1",
+    "lodash.isempty": "^4.4.0",
+    "node-sass": "^4.9.3",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "react-helmet": "^5.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "eslint-plugin-react": "^7.11.1"
+  }
 }
